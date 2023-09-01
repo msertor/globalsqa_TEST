@@ -1,6 +1,7 @@
 package com.globalsqa.pages;
 
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,6 +18,7 @@ public class LoginPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Going to the Manager Page")
     public ManagerPage pressBankManagerLogin(){
         bankManagerLoginBtn.click();
         return new ManagerPage(driver);

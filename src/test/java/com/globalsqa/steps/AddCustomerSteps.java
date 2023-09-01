@@ -68,7 +68,7 @@ public class AddCustomerSteps extends DriverManager {
 
     @Then("the manager can see the new customer under Customer tab")
     public void theManagerCanSeeTheNewCustomerUnderCustomerTab() {
-        customersPage.findCustomer(PH.getFirstName());
+        customersPage.searchCustomer(PH.getFirstName());
         assertThat("Newly added customer is found", customersPage.checkIfCustomerIsFound(PH.getFirstName()));
     }
 

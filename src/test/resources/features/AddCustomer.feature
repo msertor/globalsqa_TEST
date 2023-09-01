@@ -1,3 +1,4 @@
+@AddCustomer
 Feature: Add a new customer
 
     Background: User must be logged in
@@ -14,7 +15,7 @@ Feature: Add a new customer
       When the manager goes to Customer tab
       Then the manager can see the new customer under Customer tab
 
-      Scenario: Manager can delete customer
-        Given the manager adds a new customer
-        When the manager deletes the customer under Customer tab
-        Then the new customer disappears
+    Scenario: Manager can delete customer
+      Given the manager adds a new customer
+      When the manager deletes the customer under Customer tab
+      Then the new customer disappears

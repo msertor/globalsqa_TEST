@@ -1,5 +1,6 @@
 package com.globalsqa.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -28,11 +29,12 @@ public class CustomersSectionPage extends ManagerPage {
         PageFactory.initElements(driver, this);
     }
 
-
-    public void findCustomer(String firstName) {
+    @Step("Searching customer")
+    public void searchCustomer(String firstName) {
         searchCustomer.sendKeys(firstName);
     }
 
+    @Step("Checking if customer is found")
     public boolean checkIfCustomerIsFound(String firstName) {
         try{
             return driver.findElement(By.xpath(USER_ROW.replace("XXX", firstName))).isDisplayed();
@@ -42,10 +44,11 @@ public class CustomersSectionPage extends ManagerPage {
         }
     }
 
-    public void pressDelete(){
+    private void pressDelete(){
         deteleCustomerBtn.click();
     }
 
+    @Step("Deleting customer")
     public void deleteCustomer(String firstName){
         searchCustomer.sendKeys(firstName);
         pressDelete();

@@ -1,6 +1,7 @@
 package com.globalsqa.pages;
 
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,11 +23,13 @@ public class ManagerPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Going to the Add Customer Section")
     public AddCustomerFormPage pressAddCustomerSection(){
         addCustomerBtn.click();
         return new AddCustomerFormPage(driver);
     }
 
+    @Step("Going to the Customers Section")
     public CustomersSectionPage pressCustomersSection(){
         customersBtn.click();
         return new CustomersSectionPage(driver);
